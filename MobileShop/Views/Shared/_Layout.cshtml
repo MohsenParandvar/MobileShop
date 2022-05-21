@@ -35,14 +35,38 @@
                         @Html.Partial("_LoginPartial")
                     </div>
                     <div class="col-6">
-                        @Html.TextBox("searchField", null, new { @class = "form-control text-end" , placeholder = "جستجو..."})
+                        <div class="row">
+                            <div class="col-9">
+                                @Html.TextBox("searchField", null, new { @class = "form-control text-end" , placeholder = "جستجو..."})
+                            </div>
+                            <div class="col-3 text-center">
+                                logo
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-start pt-4 rtl">
+                    <div class="col-1 border-start border-1 text-center">
+                        موبایل
+                    </div>
+                    <div class="col-1 border-start border-1 text-center">
+                        لوازم جانبی
+                    </div>
+                    <div class="col-1 border-start border-1 text-center">
+                        لپ تاپ
+                    </div>
+                    <div class="col-1 border-start border-1 text-center">
+                        سوالات
+                    </div>
+                    <div class="col-1 border-start border-1 text-center">
+                        درباره ما
                     </div>
                 </div>
             </div>
         </header>
         <div id="body">
             @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
+            <section class=" main-content clear-fix">
                 @RenderBody()
             </section>
         </div>

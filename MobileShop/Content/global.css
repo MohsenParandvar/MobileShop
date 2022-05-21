@@ -1,3 +1,6 @@
 ﻿* {
     font-family:"Vazir";
 }
+.rtl {
+    direction:rtl !important;
+}

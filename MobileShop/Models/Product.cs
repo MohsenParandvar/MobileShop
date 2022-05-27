@@ -15,6 +15,8 @@ namespace MobileShop.Models
         public string Content { get; set; }
 
         public double Price { get; set; }
+
+        public string ImageUrl { get; set; }
         
         /// <summary>
         /// category entity

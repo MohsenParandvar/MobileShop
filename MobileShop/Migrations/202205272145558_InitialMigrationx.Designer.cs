@@ -5,13 +5,13 @@ namespace MobileShop.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class InitialMigrationx : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigrationx));
         
         string IMigrationMetadata.Id
         {
-            get { return "202205131228342_InitialCreate"; }
+            get { return "202205272145558_InitialMigrationx"; }
         }
         
         string IMigrationMetadata.Source

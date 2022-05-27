@@ -1,18 +1,24 @@
-﻿using System;
+﻿using MobileShop.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Linq;
+using System.Data;
+using System.Data.Entity;
 
 namespace MobileShop.Controllers
 {
     public class HomeController : Controller
     {
+        private DatabaseContext db = new DatabaseContext();
+
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            ViewBag.Message = "";
 
-            return View();
+            return View(db.Products.Include(s => s.Category).ToList());
         }
 
         public ActionResult About()

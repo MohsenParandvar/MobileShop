@@ -169,13 +169,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205131228342_InitialCreate.cs" />
-    <Compile Include="Migrations\202205131228342_InitialCreate.Designer.cs">
-      <DependentUpon>202205131228342_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205131247143_TwinCreate.cs" />
-    <Compile Include="Migrations\202205131247143_TwinCreate.Designer.cs">
-      <DependentUpon>202205131247143_TwinCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202205272145558_InitialMigrationx.cs" />
+    <Compile Include="Migrations\202205272145558_InitialMigrationx.Designer.cs">
+      <DependentUpon>202205272145558_InitialMigrationx.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -247,6 +243,7 @@
     <Content Include="Content\fonts\Vazir.ttf" />
     <Content Include="Content\fonts\Vazir-Bold.ttf" />
     <Content Include="Content\fonts\Vazir-Light.ttf" />
+    <Content Include="Images\iphone.png" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -313,6 +310,7 @@
     <Content Include="Views\Category\Create.cshtml" />
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\Product\Category.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -321,11 +319,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202205131228342_InitialCreate.resx">
-      <DependentUpon>202205131228342_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205131247143_TwinCreate.resx">
-      <DependentUpon>202205131247143_TwinCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205272145558_InitialMigrationx.resx">
+      <DependentUpon>202205272145558_InitialMigrationx.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

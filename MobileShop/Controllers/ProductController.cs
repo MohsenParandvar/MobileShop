@@ -21,6 +21,23 @@ namespace MobileShop.Controllers
             return View(db.Products.Include(s => s.Category).ToList());
         }
 
+
+        /// <summary>
+        /// GET: /Product/Category/{category}
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Category(string id)
+        {
+            List<Product> products = db.Products.Where(n => n.Category.Name == id).ToList();
+            if (products.Count != 0)
+            {
+                return View(products);
+            }
+            return HttpNotFound();
+
+            //return HttpNotFound();
+        }
+
         //
         // GET: /Product/Details/5
 

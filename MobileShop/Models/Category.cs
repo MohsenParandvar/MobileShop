@@ -18,11 +18,11 @@ namespace MobileShop.Models
         /// <summary>
         /// name of the category
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; set; } 
 
         /// <summary>
         /// list of products
         /// </summary>
-        public List<Product> Products { get; set; }
+        public virtual List<Product> Products { get; set; }
     }
 }

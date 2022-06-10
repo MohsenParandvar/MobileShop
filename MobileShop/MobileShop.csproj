@@ -164,19 +164,30 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205272145558_InitialMigrationx.cs" />
-    <Compile Include="Migrations\202205272145558_InitialMigrationx.Designer.cs">
-      <DependentUpon>202205272145558_InitialMigrationx.cs</DependentUpon>
+    <Compile Include="Migrations\202206051547397_Initial.cs" />
+    <Compile Include="Migrations\202206051547397_Initial.Designer.cs">
+      <DependentUpon>202206051547397_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206051555320_TwoInitial.cs" />
+    <Compile Include="Migrations\202206051555320_TwoInitial.Designer.cs">
+      <DependentUpon>202206051555320_TwoInitial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206071909002_Category_Relation.cs" />
+    <Compile Include="Migrations\202206071909002_Category_Relation.Designer.cs">
+      <DependentUpon>202206071909002_Category_Relation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -311,6 +322,12 @@
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\Category\Delete.cshtml" />
     <Content Include="Views\Product\Category.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
+    <Content Include="Views\Order\Create.cshtml" />
+    <Content Include="Views\Order\Edit.cshtml" />
+    <Content Include="Views\Order\Delete.cshtml" />
+    <Content Include="Views\Product\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -319,8 +336,14 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202205272145558_InitialMigrationx.resx">
-      <DependentUpon>202205272145558_InitialMigrationx.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206051547397_Initial.resx">
+      <DependentUpon>202206051547397_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206051555320_TwoInitial.resx">
+      <DependentUpon>202206051555320_TwoInitial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206071909002_Category_Relation.resx">
+      <DependentUpon>202206071909002_Category_Relation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

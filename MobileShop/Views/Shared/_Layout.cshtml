@@ -37,7 +37,9 @@
                     <div class="col-6">
                         <div class="row">
                             <div class="col-9">
-                                @Html.TextBox("searchField", null, new { @class = "form-control text-end" , placeholder = "جستجو..."})
+                                <form action="/Product/Search/" method="GET">
+                                    @Html.TextBox("searchField", null, new { @class = "form-control text-end rounded rounded-5 border-warning" , placeholder = "جستجو..."})
+                                </form>
                             </div>
                             <div class="col-3 text-center">
                                 logo
@@ -46,20 +48,20 @@
                     </div>
                 </div>
                 <div class="row justify-content-start pt-4 rtl">
-                    <div class="col-1 border-start border-1 text-center">
-                        @Html.ActionLink("موبایل", "Category", "Product", new { id = "موبایل"} , null)
+                    <div class="col-1 text-center bg-warning rounded rounded-5 py-2 mx-1 header-link">
+                        @Html.ActionLink("موبایل", "Category", "Product", new { id = "Mobile"} , null)
                     </div>
-                    <div class="col-1 border-start border-1 text-center">
-                        لوازم جانبی
+                    <div class="col-1 text-center bg-warning rounded rounded-5 py-2 mx-1 header-link">
+                        @Html.ActionLink("لوازم جانبی", "Category", "Product", new { id = "Accessories"} , null)
                     </div>
-                    <div class="col-1 border-start border-1 text-center">
-                        لپ تاپ
+                    <div class="col-1 text-center bg-warning rounded rounded-5 py-2 mx-1 header-link">
+                        @Html.ActionLink("لپ تاپ", "Category", "Product", new { id = "Laptop"} , null)
                     </div>
-                    <div class="col-1 border-start border-1 text-center">
-                        سوالات
+                    <div class="col-1 text-center bg-warning rounded rounded-5 py-2 mx-1 header-link">
+                        <a href="#">سوالات</a>
                     </div>
-                    <div class="col-1 border-start border-1 text-center">
-                        درباره ما
+                    <div class="col-1 text-center bg-warning rounded rounded-5 py-2 mx-1 header-link">
+                        <a href="#">درباره</a>
                     </div>
                 </div>
             </div>

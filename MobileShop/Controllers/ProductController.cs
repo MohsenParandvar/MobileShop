@@ -18,7 +18,7 @@ namespace MobileShop.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Products.Include(s => s.Category).ToList());
+            return View(db.Products.ToList());
         }
 
 
@@ -29,13 +29,19 @@ namespace MobileShop.Controllers
         public ActionResult Category(string id)
         {
             List<Product> products = db.Products.Where(n => n.Category.Name == id).ToList();
-            if (products.Count != 0)
+            if (products.Count > 0)
             {
                 return View(products);
             }
             return HttpNotFound();
 
             //return HttpNotFound();
+        }
+
+        public ActionResult Search(string searchField)
+        {
+            List<Product> products = db.Products.Where(p => p.Name.Contains(searchField)).ToList();
+            return View(products);
         }
 
         //
@@ -53,7 +59,7 @@ namespace MobileShop.Controllers
 
         //
         // GET: /Product/Create
-
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -77,7 +83,7 @@ namespace MobileShop.Controllers
 
         //
         // GET: /Product/Edit/5
-
+        [Authorize]
         public ActionResult Edit(int id = 0)
         {
             Product product = db.Products.Find(id);
@@ -95,7 +101,7 @@ namespace MobileShop.Controllers
         public ActionResult Edit(Product product)
         {
             if (ModelState.IsValid)
-            {
+            {                
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -105,7 +111,7 @@ namespace MobileShop.Controllers
 
         //
         // GET: /Product/Delete/5
-
+        [Authorize]
         public ActionResult Delete(int id = 0)
         {
             Product product = db.Products.Find(id);

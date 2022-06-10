@@ -46,6 +46,8 @@ C:\Users\mhsn\documents\visual studio 2012\Projects\MobileShop\MobileShop\bin\Do
 C:\Users\mhsn\documents\visual studio 2012\Projects\MobileShop\MobileShop\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 C:\Users\mhsn\documents\visual studio 2012\Projects\MobileShop\MobileShop\obj\Debug\MobileShop.dll
 C:\Users\mhsn\documents\visual studio 2012\Projects\MobileShop\MobileShop\obj\Debug\MobileShop.pdb
-C:\Users\mhsn\documents\visual studio 2012\Projects\MobileShop\MobileShop\obj\Debug\MobileShop.Migrations.InitialMigrationx.resources
-C:\Users\mhsn\documents\visual studio 2012\Projects\MobileShop\MobileShop\obj\Debug\MobileShop.csproj.GenerateResource.Cache
 C:\Users\mhsn\documents\visual studio 2012\Projects\MobileShop\MobileShop\obj\Debug\MobileShop.csprojResolveAssemblyReference.cache
+C:\Users\mhsn\documents\visual studio 2012\Projects\MobileShop\MobileShop\obj\Debug\MobileShop.Migrations.Initial.resources
+C:\Users\mhsn\documents\visual studio 2012\Projects\MobileShop\MobileShop\obj\Debug\MobileShop.csproj.GenerateResource.Cache
+C:\Users\mhsn\documents\visual studio 2012\Projects\MobileShop\MobileShop\obj\Debug\MobileShop.Migrations.TwoInitial.resources
+C:\Users\mhsn\documents\visual studio 2012\Projects\MobileShop\MobileShop\obj\Debug\MobileShop.Migrations.Category_Relation.resources

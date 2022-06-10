@@ -4,3 +4,19 @@
 .rtl {
     direction:rtl !important;
 }
+.header-link:hover {
+    background-color:#212529 !important;
+    transition: background 0.3s ease-in-out;
+}
+.header-link:hover a {
+    color:#FFF;
+    transition: color 0.3s ease-in-out;
+}
+.header-link a{
+    text-decoration:none !important;
+    color:black;
+}
+.header-link a:hover {
+    background-color:transparent !important;
+    color:white;
+}

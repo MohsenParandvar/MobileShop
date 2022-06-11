@@ -1,10 +1,12 @@
 ﻿@if (Request.IsAuthenticated) {
     <text>
-        سلام, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
-        @using (Html.BeginForm("خروج", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+        @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
             @Html.AntiForgeryToken()
             <a href="javascript:document.getElementById('logoutForm').submit()">خروج</a>
         }
+        <p class="d-inline">|</p>
+        <p class="d-inline">@Html.ActionLink("سبد خرید","Checkout","Order")</p>
     </text>
 } else {
     <p class="d-inline">@Html.ActionLink("ورود", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</p>

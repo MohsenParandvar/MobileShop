@@ -51,3 +51,5 @@ C:\Users\mhsn\documents\visual studio 2012\Projects\MobileShop\MobileShop\obj\De
 C:\Users\mhsn\documents\visual studio 2012\Projects\MobileShop\MobileShop\obj\Debug\MobileShop.csproj.GenerateResource.Cache
 C:\Users\mhsn\documents\visual studio 2012\Projects\MobileShop\MobileShop\obj\Debug\MobileShop.Migrations.TwoInitial.resources
 C:\Users\mhsn\documents\visual studio 2012\Projects\MobileShop\MobileShop\obj\Debug\MobileShop.Migrations.Category_Relation.resources
+C:\Users\mhsn\documents\visual studio 2012\Projects\MobileShop\MobileShop\obj\Debug\MobileShop.Migrations.OrderUser.resources
+C:\Users\mhsn\documents\visual studio 2012\Projects\MobileShop\MobileShop\obj\Debug\MobileShop.Migrations.orderupdate.resources

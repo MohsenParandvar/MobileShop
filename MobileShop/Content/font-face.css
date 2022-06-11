@@ -1,10 +1,10 @@
 @font-face {
   font-family: Vazir;
   src: url('Vazir-Regular.eot');
-  src: url('/Content/fonts/Vazir-Regular.eot?#iefix') format('embedded-opentype'),
-       url('/Content/fonts/Vazir-Regular.woff2') format('woff2'),
-       url('/Content/fonts/Vazir-Regular.woff') format('woff'),
-       url('/Content/fonts/Vazir-Regular.ttf') format('truetype');
+  src: url('/Content/fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+       url('/Content/fonts/Vazir.woff2') format('woff2'),
+       url('/Content/fonts/Vazir.woff') format('woff'),
+       url('/Content/fonts/Vazir.ttf') format('truetype');
   font-weight: normal;
   font-display:swap;
 }

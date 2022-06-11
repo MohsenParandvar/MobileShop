@@ -7,21 +7,26 @@
     <div class="row">
         <div class="col-6 rtl text-start">
             <span>
-                مشاهده همه>>
+                مشاهده همه
             </span>
         </div>
         <div class="col-6 rtl text-end">
-            <span>
-                موبایل
-            </span>
+            <h5>
+                صفحه اصلی
+            </h5>
         </div>
     </div>
     <div class="row">
         @foreach (var item in Model)
         {
             <div class="col col-3 text-center">
-                <img src="~/Images/@Html.DisplayFor(modelItem => item.ImageUrl)" alt="image" width="240"/>
-                <p class="text-center">@Html.DisplayFor(modelItem => item.Name)</p>
+                <a href="@Url.Action("Details", "Product", new {id = item.Id})">
+                    <div class="product-item shadow shadow-1 rounded rouned-5 p-3">
+                        <img src="~/Images/@Html.DisplayFor(modelItem => item.ImageUrl)" alt="image" width="240"/>
+                        <h5 class="text-center product-title pt-3">@Html.DisplayFor(modelItem => item.Name)</h5>
+                        <span class="pt-2">@item.Description</span>
+                    </div>
+                </a>
             </div>
         }
     </div>

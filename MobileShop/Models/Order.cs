@@ -17,7 +17,12 @@ namespace MobileShop.Models
         /// <summary>
         /// customer id
         /// </summary>
-        public int CustomerId { get; set; }
+        public int UserProfileId { get; set; }
+
+        /// <summary>
+        /// User model
+        /// </summary>
+        public virtual UserProfile UserProfile { get; set; }
 
         /// <summary>
         /// time of create order

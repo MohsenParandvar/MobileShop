@@ -1,50 +1,37 @@
-﻿@model MobileShop.Models.Product
+﻿@using MobileShop
+@model MobileShop.Models.Product
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="container bg-white rounded border border-0 shadow p-4">
+    <div class="row">
+        <div class="col-3 rtl align-bottom d-table-cell mt-auto pb-5">
+            <span class="vazir text-right">قیمت</span>
+            <p class="text-warning vazir h4 rtl">@Extensions.ToPersianNumber(@Model.Price.ToString("N0")) تومان</p>
+            <form action="~/Order/AddOrderItem" method="post">
+                <input type="hidden" name="productId" value="@Model.Id" />
+                <input class="btn btn-warning border-0 bg-warning w-75 p-2" type="submit" value="افزودن به سبد"/>
+            </form>
+        </div>
+        <div class="col-4 pt-5">
+            <h3 class="pt-3 text-right">@Html.DisplayFor(model => model.Name)</h3>
+            <p class="text-right">@Html.DisplayFor(model => model.Description)</p>
+        </div>
+        <div class="col-5">
+            <img class="w-100"
+                 src="~/Images/@Html.DisplayFor(model => model.ImageUrl)"
+                 alt="@Html.DisplayFor(model => model.Name)"/>
+        </div>
+    </div>
+</div>
 
-<fieldset>
-    <legend>Product</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Name)
+<div class="container bg-white rounded border border-0 shadow p-4 mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h4 class="text-danger text-right">توضیحات</h4>
+            <p class="text-right pt-3">@Model.Content</p>
+        </div>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Name)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Description)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Description)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Content)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Content)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Category)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Category.Name)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Price)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Price)
-    </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+</div>

@@ -1,8 +1,14 @@
 ﻿* {
     font-family:"Vazir";
 }
+.vazir {
+    font-family: "Vazir" !important;
+}
 .rtl {
     direction:rtl !important;
+}
+.text-right {
+    text-align: right;
 }
 .header-link:hover {
     background-color:#212529 !important;
@@ -19,4 +25,17 @@
 .header-link a:hover {
     background-color:transparent !important;
     color:white;
+}
+.product-item {
+    background-color: #FFF !important;
+}
+a:hover {
+    background-color: transparent !important;
+}
+a{
+    text-decoration: none;
+}
+.product-item:hover {
+    transform: scale(1.04);
+    transition: ease 0.3s;
 }

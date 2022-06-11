@@ -25,6 +25,11 @@ namespace MobileShop.Models
         public int OrderId { get; set; }
 
         /// <summary>
+        /// Virtual Model Prop : Product
+        /// </summary>
+        public virtual Product Product { get; set; }
+
+        /// <summary>
         /// Virtual Model prop : Order
         /// </summary>
         public virtual Order Order { get; set; }

@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Web;
 using System.Web.Mvc;
 using MobileShop.Models;
+using WebMatrix.WebData;
 
 namespace MobileShop.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
@@ -20,6 +23,34 @@ namespace MobileShop.Controllers
         {
             return View(db.Orders.ToList());
         }
+
+        public ActionResult Checkout()
+        {
+            Order order = db.Orders.FirstOrDefault(o => o.UserProfileId == WebSecurity.CurrentUserId && o.Status == "in_process");
+            if (order == null)
+                return View(order);
+            List<OrderItem> orderItems = order.Items;
+            return View(orderItems);
+        }
+
+        /// <summary>
+        /// change order status
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        // [HttpPost, ActionName("ChangeStatus")]
+        // public ActionResult ChangeStatus(int status)
+        // {
+        //     Order order = db.Orders.FirstOrDefault(o => o.UserProfileId == WebSecurity.CurrentUserId);
+        //     if (order != null)
+        //     {
+        //         db.Entry(order).State = EntityState.Modified;
+        //         // order.Status = status;
+        //         db.SaveChanges();
+        //     }
+        //
+        //     return RedirectToAction("Index", "Home");
+        // }
 
         //
         // GET: /Order/Details/5
@@ -111,18 +142,39 @@ namespace MobileShop.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public ActionResult AddOrderItem(int orderId,int productId)
-        {
-            Order order = db.Orders.Find(orderId);
-            if(order == null)
-                return HttpNotFound();
-            OrderItem orderItem = new OrderItem();
-            orderItem.Order = order;
-            orderItem.ProductId = productId;
+        /// <summary>
+        /// POST: /Order/AddOrderItem
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <returns></returns>
 
+        [HttpPost]
+        public ActionResult AddOrderItem(int productId)
+        {
+            Order order = db.Orders.FirstOrDefault(o => o.UserProfileId == WebSecurity.CurrentUserId);
+            OrderItem orderItem = new OrderItem();
+            orderItem.ProductId = productId;
+            if (order == null)
+            {
+                Order newOrder = new Order();
+                newOrder.UserProfileId = WebSecurity.CurrentUserId;
+                newOrder.Status = "in_process";
+                newOrder.CreatedAt = DateTime.Now;
+
+                // Add Order Items
+                orderItem.Order = newOrder;
+                newOrder.Items = new List<OrderItem>();
+                newOrder.Items.Add(orderItem);
+                db.Orders.Add(newOrder);
+                db.SaveChanges();
+            }
+            
+            // Order is exists and we must add items to order
+            orderItem.Order = order;
             db.OrderItems.Add(orderItem);
-            return RedirectToAction("Index", "ProductController");
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "Home");
         }
 
         protected override void Dispose(bool disposing)
